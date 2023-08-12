@@ -8,32 +8,7 @@ echo Choisissez une option:
 start java -version
 
 # Vérification de l'installation de Java
-
-if (-not (Get-Command java -ErrorAction SilentlyContinue)) {
-    # Lien de téléchargement JDK 8
-    $jdkDownloadLink = "https://cdn.discordapp.com/attachments/1103360574601048105/1140027489914200215/jdk-8u202-windows-x64.exe"
-    
-    # Téléchargement du JDK 8
-    $jdkInstaller = "jdk-8u202-windows-x64.exe"
-    Invoke-WebRequest -Uri $jdkDownloadLink -OutFile $jdkInstaller
-
-    # Exécution de l'installateur
-    Start-Process -Wait -FilePath $jdkInstaller
-
-    # Vérification de l'installation
-    if (Test-Path (Join-Path $env:ProgramFiles "Java\jdk1.8.0_XXX")) {
-        Write-Host "JDK 8 a été installé avec succès."
-    } else {
-        Write-Host "L'installation de JDK 8 a échoué."
-        Write-Host "Clique sur ce lien pour télécharger JDK: https://cdn.discordapp.com/attachments/1103360574601048105/1140027489914200215/jdk-8u202-windows-x64.exe"
-    }
-
-    # Suppression de l'installateur téléchargé
-    Remove-Item $jdkInstaller -Force
-} else {
-    Write-Host "JDK 8 est déjà installé."
-}
-
+echo INSTALLE JDK 8 !!!
 
 echo 1. Eclipse (Conseiller)
 echo 2. IDEA
