@@ -10,34 +10,31 @@ buildscript {
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
     }
+}
+
+
     dependencies {
         classpath ('com.anatawa12.forge:ForgeGradle:1.2-1.0.+') {
             changing = true
         }
-    }
+
 }
 
 apply plugin: 'forge'
 
+
+
 version = "1.0"
-group = "com.yourname.modid"
-archivesBaseName = "modid"
+group = "fr.modid.global"
+archivesBaseName = "NAME"
 targetCompatibility = sourceCompatibility = JavaVersion.VERSION_1_8
 
 minecraft {
     version = "1.7.10-10.13.4.1614-1.7.10"
-    runDir = "eclipse"
+    runDir = "ecplise"
 }
 
-dependencies {
-    // Ajoutez les dépendances spécifiques à votre mod ici
-    // Par exemple, la dépendance de Forge
-    minecraft 'net.minecraftforge:forge:1.7.10-10.13.4.1614-1.7.10'
-}
 
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
 
 processResources {
     inputs.property "version", project.version
